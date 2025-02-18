@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">First Number</label>
+        <input type="number" id="first-number">
+        
+        <label for="">Second Number</label>
+        <input type="number" id="second-number">
+    </div>
+    <br/>
+    <div>
+        <button onclick="displayNum('+')" id="plus-button" >+</button>    
+        <button onclick="displayNum('-')" id="sub-button" >-</button>    
+        <button onclick="displayNum('*')" id="mul-button" >*</button>    
+        <button onclick="displayNum('/')" id="div-button" >/</button>    
+
+    </div>
+
+
+    <p>Answer:<span id="name-holder"></span></p>
+
+    <script>
+
+    
+        function displayNum(operator){
+            const firstNumber = document.getElementById('first-number').value;
+            const secondNumber = document.getElementById('second-number').value;
+            const plusButton = document.getElementById('plus-button');
+            const subButton = document.getElementById('sub-button');
+            const mulButton = document.getElementById('mul-button');
+            const divButton = document.getElementById('div-button');
+            const nameHolder = document.getElementById('name-holder');
+            console.log(plusButton);
+
+
+            if(operator === '+'){
+                nameHolder.innerHTML = parseInt(firstNumber) + parseInt(secondNumber);
+            }else if(operator === '-'){
+                nameHolder.innerHTML = parseInt(firstNumber) - parseInt(secondNumber);
+            }else if(operator  === '*'){
+                nameHolder.innerHTML = parseInt(firstNumber) * parseInt(secondNumber);
+            }else if(operator === '/'){
+                parseInt(secondNumber)!==0 ? nameHolder.innerHTML = parseInt(firstNumber) / parseInt(secondNumber)
+                : nameHolder.innerHTML = "Cannot divide by zero";
+            }
+        }
+    </script>
+</body>
+</html>
